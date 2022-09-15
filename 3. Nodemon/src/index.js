@@ -1,6 +1,8 @@
 var http = require('http')
-//importar un modulo local
-var operaciones = require('./operations')
+//importar un modulo local de forma total
+var operaciones = require('../utils/operations')
+//importacion parcial de un modulo
+var { letterA } = require('../utils/letters')
 
 var server=http.createServer((req,res)=>{
     console.log(req.url);
@@ -12,4 +14,10 @@ var server=http.createServer((req,res)=>{
 
 console.log("Suma ", operaciones.addition(3,5));
 console.log("Multiplicación ", operaciones.multiplication(3,5));
+
+console.log("Imprimir A ", letterA());
+/*
+no existe la importacion
+console.log("Imprimir B ", letterB());
+*/
 server.listen(3000);
