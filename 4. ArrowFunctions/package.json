@@ -1,0 +1,16 @@
+{
+  "name": "4.-arrowfunctions",
+  "version": "1.0.0",
+  "description": "nodejs project to understand arrow functions",
+  "main": "/src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index",
+    "dev": "nodemon src/index.js"
+  },
+  "author": "dpaz",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
