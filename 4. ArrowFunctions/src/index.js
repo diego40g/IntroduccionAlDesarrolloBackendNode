@@ -9,8 +9,25 @@ const apiKey="123"
 var promoEnable = false;
 
 const server = http.createServer((req,res) => {
-    res.writeHead(200,{"Content-type":"text/html"});
-    res.write("<html><head><meta charset=\"utf-8\"></head><body>Servidor Javascript </body></html>");
+    console.log(req.url);
+    switch (req.url) {
+        case "/":
+            res.writeHead(200,{"Content-type":"text/html"});
+            res.write("<html><head><meta charset=\"utf-8\"></head><body>Servidor Javascript HOME</body></html>");
+            break;
+        case "/info":
+            res.writeHead(200,{"Content-type":"application/json"});
+            res.write(JSON.stringify({version:"0.0.1",appName:"Curso Node JS"}));
+            break;
+        case "/detail":
+            res.writeHead(200,{"Content-type":"text/html"});
+            res.write("<html><head><meta charset=\"utf-8\"></head><body>Servidor Javascript DETAIL</body></html>");
+            break;
+        default:
+            res.writeHead(404,{"Content-type":"text/html"});
+            res.write("<html><head><meta charset=\"utf-8\"></head><body>Servidor Javascript NOT FOUND </body></html>");
+            break;
+    }
     res.end();
 });
 
