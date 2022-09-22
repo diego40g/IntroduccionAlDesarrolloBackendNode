@@ -1,4 +1,5 @@
 const express = require('express')
+const {phone} = require('phone');
 
 const  PORT = 5000;
 
@@ -21,6 +22,17 @@ app.get("/info",(req,res) => {
 app.get("/detail",(req,res) => {
     res.setHeader("Content-type","application/json")
     res.status(200).send(JSON.stringify({version:"0.0.1",appName:"Express server"}))
+})
+
+app.get('/phone',(req,res)=>{
+    const {value, country} = req.query;
+    try{
+        const countryPhone = phone(value, {country: country});
+        res.setHeader("Content-type","application/json")
+        res.status(200).send(JSON.stringify(countryPhone));
+    }catch (e){
+        res.status(400).send("Peticion incorrecta: ",e.message)
+    }
 })
 
 app.listen(PORT, ()=>{
