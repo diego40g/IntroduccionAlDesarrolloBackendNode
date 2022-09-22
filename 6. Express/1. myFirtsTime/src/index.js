@@ -13,6 +13,16 @@ app.get("/",(req,res)=>{
     res.end();*/
 });
 
+app.get("/info",(req,res) => {
+    res.setHeader("Content-type","application/json")
+    res.status(200).send(JSON.stringify({version:"0.0.1",appName:"Express server"}))
+})
+
+app.get("/detail",(req,res) => {
+    res.setHeader("Content-type","application/json")
+    res.status(200).send(JSON.stringify({version:"0.0.1",appName:"Express server"}))
+})
+
 app.listen(PORT, ()=>{
     console.log("Ejecutandose en "+PORT);
 })
