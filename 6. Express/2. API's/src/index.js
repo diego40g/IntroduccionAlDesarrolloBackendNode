@@ -24,6 +24,9 @@ app.post('/login', (req,res)=>{
     }
 })
 
+app.get("/",(req,res) => {
+    res.status(200).send({message: "Rest Api Get"});
+})
 
 app.use((req,res)=>{
     res.status(404).send("Not Found");
