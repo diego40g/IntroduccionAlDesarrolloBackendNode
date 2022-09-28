@@ -42,7 +42,7 @@ const products = [
             "pantone_value": "15-5217"
         },
         {
-            "id": 8,
+            "id": 7,
             "name": "blue turquoise",
             "year": 2005,
             "color": "#53B0AE",
@@ -79,7 +79,21 @@ const getProductById=(req,res)=>{
     }
 }
 
+const createProduct=(req,res)=>{
+    const { name, year, color, pantone_value } = req.body;
+    const newProduct = {
+        id: products.length+1,
+        name, //name: name
+        year,
+        color,
+        pantone_value
+    };
+    products.push(newProduct)
+    res.send(newProduct);
+}
+
 module.exports = {
     getProducts,
     getProductById,
+    createProduct,
 }
