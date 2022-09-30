@@ -1,0 +1,18 @@
+{
+  "name": "4.-put",
+  "version": "1.0.0",
+  "description": "Method http put to update register",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "author": "dpaz",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.20"
+  }
+}
