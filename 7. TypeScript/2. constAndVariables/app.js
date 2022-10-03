@@ -1,0 +1,18 @@
+var apiKey = "qkwnejio1";
+var nameUser = "";
+nameUser = "Diego";
+var ageUser = 25;
+ageUser = 25;
+var isActive = true;
+isActive = false;
+var numbers = [];
+var numbers2 = [];
+var numbers3 = [];
+numbers2.push(1.3);
+numbers2.push(2.3);
+numbers3.push(3.1);
+numbers3.push(3.2);
+numbers2.slice(1, 2);
+numbers3.slice(1, 2);
+var namesString = ["Diego", "Ismael"];
+namesString.slice(1, 2);
