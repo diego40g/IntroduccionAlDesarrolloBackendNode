@@ -8,3 +8,14 @@ let user: {
     age:25
 };
 
+type UserData = {
+    name: string;
+    lastname: string;
+    age: number;
+}
+
+let user2: UserData = {
+    name: "Ignacio",
+    lastname: "Naula",
+    age: 22
+}
