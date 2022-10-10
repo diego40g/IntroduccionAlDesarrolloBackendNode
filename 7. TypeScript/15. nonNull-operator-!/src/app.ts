@@ -2,7 +2,7 @@ const checkCredentials = (email: string, password:string):string => {
     return "login ok";
 }
 
-const login =(data:{email:string, password?:string, loginType:string }):string => {
+const login =(data:{email:string, loginType:string,password?:string,password2?:string }):string => {
     const { email, password, loginType } = data;
     switch(loginType){
         case "password":
@@ -16,6 +16,11 @@ const login =(data:{email:string, password?:string, loginType:string }):string =
             return "login invalid"
     }
 }
+
+console.log(login({email:"email@email.com",loginType:"password",password:undefined,password2:"12312312"}));
+console.log(login({email:"email@email.com",loginType:"facebook",password:undefined,password2:"12312312"}));
+console.log(login({email:"email@email.com",loginType:"google",password:undefined,password2:"12312312"}));
+console.log(login({email:"email@email.com",loginType:"EMAIL",password:undefined,password2:"12312312"}));
 
 /****************************** Para crear clases apartir de funciones *******************************/
 class User{
