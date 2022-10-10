@@ -1,8 +1,10 @@
+
+
 const checkCredentials = (email: string, password:string):string => {
     return "login ok";
 }
 
-const login =(data:{email:string, loginType:string,password?:string,password2?:string }):string => {
+const login =(data:{email:string, password?:string,password2?:string,loginType:string }):string => {
     const { email, password, loginType } = data;
     switch(loginType){
         case "password":
