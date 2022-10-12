@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 
 import { users } from '../../data/users';
 
-const getUsers = (req:Request, res:Response): void => {
+export const getUsers = (req:Request, res:Response): void => {
   res.send({
     page: 2,
     per_page: 6,
@@ -16,7 +16,7 @@ const getUsers = (req:Request, res:Response): void => {
   });
 };
 
-const getUserById = (req:Request, res:Response): void => {
+export const getUserById = (req:Request, res:Response): void => {
   const { userId } = req.params;
   const index: number = users.findIndex((item) => item.id === parseInt(userId));
   if (index != -1) {
@@ -26,7 +26,5 @@ const getUserById = (req:Request, res:Response): void => {
   }
 };
 
-export {
-  getUsers,
-  getUserById,
-};
+
+
