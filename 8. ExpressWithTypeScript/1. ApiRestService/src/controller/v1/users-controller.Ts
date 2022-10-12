@@ -18,7 +18,7 @@ const getUsers = (req:Request, res:Response): void => {
 
 const getUserById = (req:Request, res:Response): void => {
   const { userId } = req.params;
-  const index = users.findIndex((item) => item.id === parseInt(userId));
+  const index: number = users.findIndex((item) => item.id === parseInt(userId));
   if (index != -1) {
     res.send({ data: users[index] });
   } else {
@@ -26,7 +26,7 @@ const getUserById = (req:Request, res:Response): void => {
   }
 };
 
-exports = {
+export {
   getUsers,
   getUserById,
 };
