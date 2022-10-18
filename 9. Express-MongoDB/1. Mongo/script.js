@@ -1,0 +1,24 @@
+db.nombres_collections.insert({
+    name:"Ecuador",
+    code:"EC"
+})
+db.nombres_collections.insert({
+    name:"Colombia",
+    code:"CO"
+})
+db.nombres_collections.insert([
+    {
+        name:"Peru",
+        code:"PE"
+    },
+    {
+        name:"México",
+        code:"MX"
+    },
+    {
+        name:"Chile",
+        code:"CH"
+    }
+])
+
+db.nombres_collections.find()
