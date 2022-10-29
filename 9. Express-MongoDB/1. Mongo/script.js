@@ -22,3 +22,14 @@ db.nombres_collections.insert([
 ])
 
 db.nombres_collections.find()
+db.nombres_collections.find().pretty();
+db.nombres_collections.find().pretty().explain("executionStats");
+
+db.nombre_collection.find({code:"CO"})
+db.nombre_collection.find({code:{$eq:"EC"}})
+//no coincida
+db.nombre_collection.find({code:{$ne:"EC"}})
+
+db.nombre_collection.find({code:"CO", name:"Colombia"})
+db.nombre_collection.find({$and:[{code:"EC", name:{$ne:"Ecuador"}}]})
+db.nombre_collection.find({$and:[{code:"CO"}, {name:{$ne:"Ecuador"}}]})
