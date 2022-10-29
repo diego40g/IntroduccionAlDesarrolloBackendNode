@@ -61,3 +61,15 @@ db.products.find({$or:[{name:'Flutter'}, {price:{$gt:9.99}}]})
 /*url documentation
 https://www.mongodb.com/docs/manual/reference/operator/query/
 */
+
+//find one
+db.nombre_collection.findOne({price:9.99})
+
+//projection to recover all but not id
+db.nombre_collection.find({},{_id:0})
+db.nombre_collection.find({},{_id:0,price:0})
+db.nombre_collection.find({},{name:1})
+db.nombre_collection.find({},{_id:0,name:1})
+
+db.products.find({price:{$gt:9.99}},{name:1,_id:0})
+db.products.find({note:{$exists:true}})
